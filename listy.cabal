@@ -1,0 +1,130 @@
+cabal-version: 2.2
+
+-- This file has been generated from package.yaml by hpack version 0.37.0.
+--
+-- see: https://github.com/sol/hpack
+
+name:           listy
+version:        0.1.0.0
+description:    Please see the README on GitHub at <https://github.com/githubuser/listy#readme>
+homepage:       https://github.com/githubuser/listy#readme
+bug-reports:    https://github.com/githubuser/listy/issues
+author:         Author name here
+maintainer:     example@example.com
+copyright:      2024 Author name here
+license:        BSD-3-Clause
+license-file:   LICENSE
+build-type:     Simple
+extra-source-files:
+    README.md
+    CHANGELOG.md
+
+source-repository head
+  type: git
+  location: https://github.com/githubuser/listy
+
+library
+  exposed-modules:
+      SADT.Common
+      SADT.Data.Env
+      SADT.Data.Expr
+      SADT.Data.Stmt
+      SADT.Data.Type
+      SADT.Data.Val
+      SADT.Eval
+      SADT.Parser.Expr
+      SADT.Parser.Internal
+      SADT.Parser.Stmt
+      SADT.Repl.Exec
+      SADT.Repl.State
+      SADT.Repl.Stmt
+      SADT.Typing.Infer
+      SADT.Typing.Subst
+      SADT.Util.Directory
+  other-modules:
+      Paths_listy
+  autogen-modules:
+      Paths_listy
+  hs-source-dirs:
+      src
+  default-extensions:
+      TupleSections
+      NoImplicitPrelude
+      OverloadedStrings
+      GeneralisedNewtypeDeriving
+  ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wmissing-export-lists -Wmissing-home-modules -Wpartial-fields -Wredundant-constraints
+  build-depends:
+      base >=4.7 && <5
+    , containers
+    , directory
+    , exceptions
+    , filepath
+    , lens
+    , mtl
+    , parsec
+    , relude
+    , repline
+    , safe-exceptions
+    , text
+  default-language: Haskell2010
+
+executable listy-exe
+  main-is: Main.hs
+  other-modules:
+      Paths_listy
+  autogen-modules:
+      Paths_listy
+  hs-source-dirs:
+      app
+  default-extensions:
+      TupleSections
+      NoImplicitPrelude
+      OverloadedStrings
+      GeneralisedNewtypeDeriving
+  ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wmissing-export-lists -Wmissing-home-modules -Wpartial-fields -Wredundant-constraints -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      base >=4.7 && <5
+    , containers
+    , directory
+    , exceptions
+    , filepath
+    , lens
+    , listy
+    , mtl
+    , parsec
+    , relude
+    , repline
+    , safe-exceptions
+    , text
+  default-language: Haskell2010
+
+test-suite listy-test
+  type: exitcode-stdio-1.0
+  main-is: Spec.hs
+  other-modules:
+      Paths_listy
+  autogen-modules:
+      Paths_listy
+  hs-source-dirs:
+      test
+  default-extensions:
+      TupleSections
+      NoImplicitPrelude
+      OverloadedStrings
+      GeneralisedNewtypeDeriving
+  ghc-options: -Wall -Wcompat -Widentities -Wincomplete-record-updates -Wincomplete-uni-patterns -Wmissing-export-lists -Wmissing-home-modules -Wpartial-fields -Wredundant-constraints -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      base >=4.7 && <5
+    , containers
+    , directory
+    , exceptions
+    , filepath
+    , lens
+    , listy
+    , mtl
+    , parsec
+    , relude
+    , repline
+    , safe-exceptions
+    , text
+  default-language: Haskell2010
