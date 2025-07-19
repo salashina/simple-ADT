@@ -20,8 +20,8 @@ insertsTyEnv :: [(Var, Scheme)] -> TyEnv -> TyEnv
 insertsTyEnv binds (TyEnv env) = TyEnv $ M.union (M.fromList $ reverse binds) env
 
 data ConstructorInfo = CInfo
-  { constructorType :: Scheme,
-    patternType :: Tag
+  { constructorType :: Scheme
+  , patternType :: Tag
   }
   deriving (Show)
 
@@ -36,9 +36,9 @@ lookupCInfo tag (ConstructorEnv env) = case M.lookup tag env of
 insertCEnv :: Tag -> Scheme -> Tag -> ConstructorEnv -> ConstructorEnv
 insertCEnv t sc pt (ConstructorEnv env) =
   ConstructorEnv $ M.insert t info env
-  where
-    info =
-      CInfo
-        { constructorType = sc,
-          patternType = pt
-        }
+ where
+  info =
+    CInfo
+      { constructorType = sc
+      , patternType = pt
+      }
